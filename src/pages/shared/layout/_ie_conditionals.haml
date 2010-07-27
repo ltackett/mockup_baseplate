@@ -1,0 +1,51 @@
+-#
+  appending classnames to HTML node.
+  
+  This replaces conditional stylesheets.
+  Hacks can be implemented using the following:
+
+  div.some-class {
+    display: inline-block;
+  }
+
+  html.ie6 div.some-class,
+  html.ie7 div.some-class {
+    display: inline;
+  }
+
+  It also allow targetting of IE-speciffic
+  sizzle selectors in jQuery, because it happens
+  before $(document).ready();
+  
+  For instance, adding :last-child pseudo class support to IE6:
+  
+  $("html.ie6 li:last-child").addClass(".last-child");
+  
+  Or to run entire blocks of JS differently in IE7:
+  
+  if($("html").hasClass("ie7")){
+    // do something clever for IE7 here.
+  } else {
+    // do something sensible for other browsers here.
+  }
+  
+-# ----------------------------------------------
+:javascript
+  var ie = false;
+/[if IE 6]
+  :javascript
+    var ieVersion = "ie6"
+  
+  = javascripts('dd_belated_png')
+  :javascript
+    DD_belatedPNG.fix('.pngfix');
+/[if IE 7]
+  :javascript
+    var ieVersion = "ie7"
+/[if IE 8]
+  :javascript
+    var ieVersion = "ie8"
+/[if IE]
+  :javascript
+    var ie = 'ie'
+    document.getElementsByTagName("html")[0].className += " ie " + ieVersion;

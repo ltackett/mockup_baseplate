@@ -1,0 +1,18 @@
+!!! Strict
+%html
+  %head
+    = partial('shared/layout/head')
+  %body{:id => body_id, :class => body_class }
+    #wrapper
+      #header
+        %h1#logo= link "Logo", '#'
+        %ul#navigation
+          %li=link 'link', '#'
+          %li=link 'link', '#'
+          %li=link 'link', '#'
+          %li=link 'link', '#'
+          %li=link 'link', '#'
+      #content= yield
+      #footer
+        %p Copyright 2010 CompanyName, All Rights Reserved
+    -# = partial('shared/analytics')

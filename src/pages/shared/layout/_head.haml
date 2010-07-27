@@ -1,0 +1,20 @@
+%title= full_page_title
+- if @page_description
+  %meta{:name => "description", :content => @page_description}
+
+= partial("shared/layout/ie_conditionals")
+
+= javascripts('css3-mediaqueries')
+= javascripts('modernizr')
+
+= stylesheets :site
+
+= javascripts('jquery-1.4.2.min')
+= javascripts('jquery.tools.min')
+/
+  = javascripts('http://www.google.com/jsapi')
+  :javascript
+    google.load("jquery", "1.4.2");
+    // google.load("jqueryui", "1.8.1");
+    // google.load("chrome-frame", "1.0.2");
+= javascripts('application')
