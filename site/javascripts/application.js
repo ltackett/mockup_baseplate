@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   // Open external links in a new window the semantic way.
+  // ----------------------------------------------------------------------------
   hostname = window.location.hostname
   $("a[href^=http]")
     .not("a[href*='" + hostname + "']")
@@ -8,18 +9,16 @@ $(document).ready(function() {
     .attr('target', '_blank');
     
   
-  // IE6 hand-holding on the usual suspects
-  $('html.ie6').find('
-    div:first-child,
-    li:first-child,
-    p:first-child').addClass('first');
-    
-  $('html.ie6').find('
-    div:last-child,
-    li:last-child,
-    p:last-child').addClass('last');
-    
+  // IE fasthack hand-holding on all first/last children
+  // ----------------------------------------------------------------------------
+  // Might have to wrench this down a notch for gigantic DOM's, as it will
+  // tank IE6, since I'm using the * selector.
+  $('html.ie *:first-child').addClass('first');
+  $('html.ie *:last-child').addClass('last');    
   
+  
+  // Contextual current class
+  // ----------------------------------------------------------------------------
   // capture what page is currently in the location bar
   var currentPage = window.location.href
   $('a').each(function(index) {
