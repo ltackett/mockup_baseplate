@@ -5,20 +5,16 @@
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
 %head
   = partial('shared/layout/head')
 %body{:id => body_id, :class => body_class }
-  #wrapper
-    #header
-      %h1#logo= link "Logo", '/'
-      %ul#navigation
-        %li=link 'link', '#'
-        %li=link 'link', '#'
-        %li=link 'link', '#'
-        %li=link 'link', '#'
-        %li=link 'link', '#'
-    #content= yield
-    #footer
-      %p Copyright 2010 CompanyName, All Rights Reserved
+
+  #container
+    %header
+    #main
+    %footer
+
   = partial('shared/layout/foot')
+  
 </html>
