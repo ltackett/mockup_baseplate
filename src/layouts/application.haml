@@ -1,18 +1,24 @@
-!!! Strict
-%html
-  %head
-    = partial('shared/layout/head')
-  %body{:id => body_id, :class => body_class }
-    #wrapper
-      #header
-        %h1#logo= link "Logo", '#'
-        %ul#navigation
-          %li=link 'link', '#'
-          %li=link 'link', '#'
-          %li=link 'link', '#'
-          %li=link 'link', '#'
-          %li=link 'link', '#'
-      #content= yield
-      #footer
-        %p Copyright 2010 CompanyName, All Rights Reserved
-    -# = partial('shared/analytics')
+!!! 5
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+%head
+  = partial('shared/layout/head')
+%body{:id => body_id, :class => body_class }
+  #wrapper
+    #header
+      %h1#logo= link "Logo", '/'
+      %ul#navigation
+        %li=link 'link', '#'
+        %li=link 'link', '#'
+        %li=link 'link', '#'
+        %li=link 'link', '#'
+        %li=link 'link', '#'
+    #content= yield
+    #footer
+      %p Copyright 2010 CompanyName, All Rights Reserved
+  = partial('shared/layout/foot')
+</html>

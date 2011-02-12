@@ -1,3 +1,7 @@
+/* Author: Lorin Tackett
+
+*/
+
 $(document).ready(function() {
 
   // Open external links in a new window the semantic way.
@@ -31,3 +35,24 @@ $(document).ready(function() {
   });
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

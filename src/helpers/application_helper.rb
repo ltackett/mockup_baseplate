@@ -1,5 +1,5 @@
 module ApplicationHelper
-  
+
   def page_title
     full_page_title.join(" - ")
   end
